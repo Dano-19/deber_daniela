@@ -1,4 +1,4 @@
-# 🚀 CI/CD para Aplicación Flask con Docker y GitHub Actions
+#  CI/CD para Aplicación Flask con Docker y GitHub Actions
 
 Este repositorio sirve como ejemplo práctico para demostrar el ciclo de Integración Continua (CI) y Entrega Continua (CD) hasta la fase de **Construcción del Paquete (Package)**, utilizando una aplicación web simple de **Flask**, contenedores **Docker** y **GitHub Actions** como orquestador del pipeline.
 
