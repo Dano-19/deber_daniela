@@ -35,4 +35,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/dano-19/daniela-img:latest
+          tags: ghcr.io/dano-19/daniela-deber:latest
