@@ -1,8 +1,6 @@
 import pytest
 from app import app # Importa la instancia de la aplicación Flask desde app.py
 
-# --- Pruebas de Rutas Sencillas ---
-
 def test_home_page():
     """
     Verifica que la ruta principal '/' funcione correctamente.
