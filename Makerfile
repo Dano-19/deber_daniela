@@ -1,0 +1,8 @@
+build: 
+    @docker build -t danimg:latest .
+
+deplay:
+    @docker stack deplay --with-registry-auth -c stack.yml quinto
+
+rm:
+    @docker stack rm quinto

@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  daniapp:
+    image: ghcr.io/dano-19/daniela-img:latest
+    deploy:
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.daniapp.entrypoints=http"
+        - "traefik.http.routers.daniapp.rule=Host(`daniapp.byronrm.com`)"
+        - "traefik.http.middlewares.daniapp-https-redirect.redirectscheme.scheme=https"
+        - "traefik.http.routers.daniapp.middlewares=daniapp-https-redirect"
+        - "traefik.http.routers.daniapp-secure.entrypoints=https"
+        - "traefik.http.routers.daniapp-secure.rule=Host(`daniapp.byronrm.com`)"
+        - "traefik.http.routers.daniapp-secure.tls=true"
+        - "traefik.http.routers.daniapp-secure.tls.certresolver=http"
+        - "traefik.http.routers.daniapp-secure.service=daniapp"
+        - "traefik.http.services.daniapp.loadbalancer.server.port=80"
+        - "traefik.docker.network=traefik-public"
+    networks:
+      - traefik-public
+
+networks:
+  traefik-public:
+    external: true
